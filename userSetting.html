@@ -1,0 +1,130 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" href="./userSetting.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+</head>
+<body>
+	<!-- code below here-->
+	<div class="container-fluid">
+		<!-- userpage -->
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  	<a class="navbar-brand" href="#">Kho sách</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  			<form class="form-inline my-2 my-lg-0 mr-auto">
+			      	<input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			      	<button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			    </form>
+			    <div class="btn-group ">
+				  	<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   	Thể loại
+				  	</button>
+					  
+					    <!-- Dropdown menu links -->
+				    <div class="dropdown-menu">
+					    <a class="dropdown-item" href="#">Truyện ngắn</a>
+					    <a class="dropdown-item" href="#">Tiểu thuyết</a>
+					    <a class="dropdown-item" href="#">Phát triển kỹ năng</a>
+					</div>
+
+				</div>
+				<div class="nav-item">
+			        <a class="nav-link" href="#">Cart</a>
+			    </div>
+			    <div class="user-img d-flex justify-content-center">
+		      		<a href="#"><img src="https://picsum.photos/200/300" alt="user" class="rounded-circle">
+		      		</a>
+
+		      	</div>
+		    </div>
+		</nav>
+			<div class="row userPage">
+			  	<div class="col-12 col-md-3">
+			    	<div class="nav flex-column  nav-pills" id="v-pills-tab" >
+				      	<div class="user-img d-flex justify-content-center">
+				      		<a href="#"><img src="https://picsum.photos/200/300" alt="user" class="rounded-circle">
+				      		</a>
+
+				      	</div>
+				      	<span class="text-center" ><a href="#">Tên người dùng<i class="fas fa-pen ml-2"></i></a></span>
+				      	<div class="nav-opts">
+				      		<a class="nav-link">Cài đặt tài khoản</a>
+				      	</div>
+				      	<div class="nav-opts">
+				      		<a class="nav-link">Giỏ sách</a>
+				      	</div>
+				      	
+				    </div>
+  				</div>
+
+  				<div class="col-12 col-md-9 d-flex justify-content-around">
+				    <form action="#" enctype="multipart/form-data" class="shopForm">
+				    	<h3>Thông tin tài khoản</h3>
+				    	<div class="form-row flex-column">
+						    <div class="form-group">
+								<label for="userName">Tên người dùng</label>
+								<input type="text" class="form-control" id="userNameInput">
+								<label for="inputPassword4">Mật khẩu cũ</label>
+								<input type="password" class="form-control" id="inputOldPassword">
+								<label for="inputPassword4">Mật khẩu mới</label>
+								<input type="password" class="form-control" id="inputNewPassword4">
+								<label for="avatar">Avatar</label><br>
+								<input type="file" id="avatarURL">
+						    </div>
+						</div>
+				    </form>
+
+				    <form action="#" enctype="multipart/form-data" class="shopForm">
+				    	<div class="shopCreate d-flex">
+				    		<a href="#" class="btn btn-primary">Tạo shop</a>
+				    	</div>
+				    	
+				    	<div class="form-row flex-column">
+						    <div class="form-group ">
+							    <label for="shopName">Tên shop</label>
+							    <input type="text" class="form-control" id="shopNameInput">
+							    <label for="shopDesc">Mô tả</label><br>
+							    <textarea id="shopDescript" name="desc" rows="4" cols="50"></textarea><br>
+							    <label for="shopType">Thể loại chính</label><br>
+							    <div class="dropdown">
+									<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+									    Thể loại
+									</button>
+									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+									    <a class="dropdown-item" href="#">IT</a>
+									    <a class="dropdown-item" href="#">Truyện ngắn</a>
+									    <a class="dropdown-item" href="#">Something else here</a>
+								  	</div>
+								</div>
+						    </div>
+						   
+						    
+						    
+						</div>
+				    </form>
+					
+				
+  				</div>
+				<div class="shopCreate d-flex justify-content-center">
+					<button class="btn btn-primary">Cập nhật</button>
+				</div>
+  			</div>
+
+  			
+
+
+	</div>
+
+	<!-- code above here -->
+	<script src="https://kit.fontawesome.com/ebe11e25b9.js" crossorigin="anonymous"></script>
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+	<script src="./index.js"></script>
+</body>
+</html>

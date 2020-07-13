@@ -1,0 +1,32 @@
+.container-fluid{
+	margin: 0;
+	border: 0;
+}
+
+.userPage{
+	margin-top: 50px;
+}
+/*user management*/
+.user-img a > img{
+	width: 50px;
+	height: 50px;
+}
+.nav-opts {
+border: 1px solid #000;
+text-align: center;	
+margin: 20px;
+}
+.nav-opts:hover {
+	border: 2px solid #f00;
+	
+}
+.nav-opts a {
+	color: #000;
+	text-transform: uppercase;
+}
+.shopDesc{
+	width: 100px;
+}
+.shopCreate{
+	width: 100%;
+}
