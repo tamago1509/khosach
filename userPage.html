@@ -2,7 +2,7 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
-	<link rel="stylesheet" href="./index.css">
+	<link rel="stylesheet" href="./common.css">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
 </head>
@@ -10,89 +10,123 @@
 	<!-- code below here-->
 	<div class="container-fluid">
 		<!-- userpage -->
-			<div class="row userPage">
-			  	<div class="col-12 col-md-3 ml-3">
-			    	<div class="nav flex-column  nav-pills" id="v-pills-tab" >
-				      	<div class="user-img d-flex justify-content-center">
-				      		<a href="#"><img src="https://picsum.photos/200/300" alt="user" class="rounded-circle">
-				      		</a>
+		<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		  	<a class="navbar-brand" href="#">Kho sách</a>
+		  	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+  			</button>
+  			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+	  			<form class="form-inline my-2 my-lg-0 mr-auto">
+			        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+			        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+			    </form>
+			    <div class="btn-group ">
+				  	<button type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				   	Thể loại
+				  	</button>
+				  
+					    <!-- Dropdown menu links -->
+				    <div class="dropdown-menu">
+					    <a class="dropdown-item" href="#">Truyện ngắn</a>
+					    <a class="dropdown-item" href="#">Tiểu thuyết</a>
+					    <a class="dropdown-item" href="#">Phát triển kỹ năng</a>
+					</div>
+				  
+				</div>
+				<div class="nav-item">
+			        <a class="nav-link" href="#">Cart</a>
+			    </div>
+			    <div class="user-img d-flex justify-content-center">
+		      		<a href="#"><img src="https://picsum.photos/200/300" alt="user" class="rounded-circle">
+		      		</a>
 
-				      	</div>
-				      	<span class="text-center" ><a href="#">Tên người dùng<i class="fas fa-pen ml-2"></i></a></span>
-				      	<div class="nav-opts">
-				      		<a class="nav-link">Cài đặt tài khoản</a>
-				      	</div>
-				      	<div class="nav-opts">
-				      		<a class="nav-link">Giỏ sách</a>
-				      	</div>
-				      	
-				    </div>
-  				</div>
+		      	</div>
+		    </div>
+		</nav>
 
-  				<div class="col-12 col-md-8 mr-5">
-				    <div class="content" >
-				      <div class="pane">
-				      	<div class="items">
-				      		<h2>Giỏ hàng/Sách nổi bật</h2>
-				      		<table class="table">
-							  <thead>
-							    <tr>
-							      <th scope="col">Tên sách</th>
-							      <th scope="col">Số lượng</th>
-							      <th scope="col">Đơn giá</th>
-							      <th scope="col">Chọn</th>
-							    </tr>
-							  </thead>
-							  <tbody>
-							    <tr>
-							      <th scope="row">The faults is on our stars</th>
-							      <td>2</td>
-							      <td>100000</td>
-							      <td>
-							      	<a href="#" class="btn btn-success">Mua</a>
-							      	<a href="#" class="btn btn-danger">Xóa</a>
-							      </td>
-							    </tr>
-							     <tr>
-							      <th scope="row">The faults is on our stars</th>
-							      <td>2</td>
-							      <td>100000</td>
-							      <td>
-							      	<a href="#" class="btn btn-success">Mua</a>
-							      	<a href="#" class="btn btn-danger">Xóa</a>
-							      </td>
-							    </tr>
-							     <tr>
-							      <th scope="row">The faults is on our stars</th>
-							      <td>2</td>
-							      <td>100000</td>
-							      <td>
-							      	<a href="#" class="btn btn-success">Mua</a>
-							      	<a href="#" class="btn btn-danger">Xóa</a>
-							      </td>
-							    </tr>
-							    
-							  </tbody>
-							</table>
-				      	</div>
-				      </div>
-				      
-				    </div>
-					<div class="price d-flex justify-content-between">
-					  	<div class="dropdown">
-						 	<a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-						    Phương thức thanh toán
-						  	</a>
+		<div class="row userPage">
+		  	<div class="col-12 col-md-3 ml-3">
+		    	<div class="nav flex-column  nav-pills" id="v-pills-tab" >
+			      	<div class="user-img d-flex justify-content-center">
+			      		<a href="#"><img src="https://picsum.photos/200/300" alt="user" class="rounded-circle">
+			      		</a>
 
-			  				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-			    				<a class="dropdown-item" href="#">COD_Thanh toán khi giao hàng</a>
-							</div>
+			      	</div>
+			      	<span class="text-center" ><a href="#">Tên người dùng<i class="fas fa-pen ml-2"></i></a></span>
+			      	<div class="nav-opts">
+			      		<a class="nav-link">Cài đặt tài khoản</a>
+			      	</div>
+			      	<div class="nav-opts">
+			      		<a class="nav-link">Giỏ sách</a>
+			      	</div>
+			      	
+			    </div>
+				</div>
+
+				<div class="col-12 col-md-8 mr-5">
+			    <div class="content" >
+			      <div class="pane">
+			      	<div class="items">
+			      		<h2>Giỏ hàng/Sách nổi bật</h2>
+			      		<table class="table">
+						  <thead>
+						    <tr>
+						      <th scope="col">Tên sách</th>
+						      <th scope="col">Số lượng</th>
+						      <th scope="col">Đơn giá</th>
+						      <th scope="col">Chọn</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr>
+						      <th scope="row">The faults is on our stars</th>
+						      <td>2</td>
+						      <td>100000</td>
+						      <td>
+						      	<a href="#" class="btn btn-success">Mua</a>
+						      	<a href="#" class="btn btn-danger">Xóa</a>
+						      </td>
+						    </tr>
+						     <tr>
+						      <th scope="row">The faults is on our stars</th>
+						      <td>2</td>
+						      <td>100000</td>
+						      <td>
+						      	<a href="#" class="btn btn-success">Mua</a>
+						      	<a href="#" class="btn btn-danger">Xóa</a>
+						      </td>
+						    </tr>
+						     <tr>
+						      <th scope="row">The faults is on our stars</th>
+						      <td>2</td>
+						      <td>100000</td>
+						      <td>
+						      	<a href="#" class="btn btn-success">Mua</a>
+						      	<a href="#" class="btn btn-danger">Xóa</a>
+						      </td>
+						    </tr>
+						    
+						  </tbody>
+						</table>
+			      	</div>
+			      </div>
+			      
+			    </div>
+				<div class="price d-flex justify-content-between">
+				  	<div class="dropdown">
+					 	<a class="btn btn-light dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    Phương thức thanh toán
+					  	</a>
+
+		  				<div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+		    				<a class="dropdown-item" href="#">COD_Thanh toán khi giao hàng</a>
 						</div>
-						<div class="mr-5"><strong>Tổng:</strong></div>
-						<a href="#" class="btn btn-primary">Tiếp theo</a>
-					</div>  
-  				</div>
-  			</div>
+					</div>
+					<div class="mr-5"><strong>Tổng:</strong></div>
+					<a href="#" class="btn btn-primary">Tiếp theo</a>
+				</div>  
+				</div>
+		</div>
 
   			
 
