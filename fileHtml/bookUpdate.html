@@ -84,24 +84,24 @@
 						      	<input type="number" class="form-control" id="bookPrice">
 						    </div>
 						    <div class="form-group">
-						      <label for="amount">Số lượng</label><br>
-						      <input type="number" id="amount">
+						        <label for="amount">Số lượng</label><br>
+						        <input type="number" id="amount">
 						    </div>
 						    <div class="dropdown">
-								  <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-								   Thể loại
-								  </button>
-								  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-								    <a class="dropdown-item" href="#">IT</a>
-								    <a class="dropdown-item" href="#">Truyện ngắn</a>
-								    <a class="dropdown-item" href="#">Kỹ năng sống</a>
-								    <a class="dropdown-item" href="#">Truyện ngôn tình</a>
-								    <a class="dropdown-item" href="#">Tiểu thuyết</a>
-								    <a class="dropdown-item" href="#">Sách học ngoại ngữ</a>
-								    <a class="dropdown-item" href="#">Sách kinh doanh</a>
-								  </div><br>
-								  <label for="bReview">Review</label><br>
-								  <textarea id="bookReview" name="bReview" rows="4" cols="50"></textarea>
+							  	<label for="category">Chọn thể loại:</label>
+								<select name="category" id="cate">
+								  	<option value="truyện ngắn">Truyện ngắn</option>
+									<option value="truyện dài">Truyện dài</option>
+									<option value="tiểu thuyết">Tiểu thuyết</option>
+									<option value="ngôn lù">Ngôn tình</option>
+									<option value="PTKN">Phát triển kĩ năng</option>
+									<option value="it">IT</option>
+									<option value="ngoại ngữ">Ngoại ngữ</option>
+								</select>
+						    	
+						    </div>
+								<label for="bReview">Review</label><br>
+								<textarea id="bookReview" name="bReview" rows="4" cols="50"></textarea>
 								</div>
 								<div class="form-group">
 							      	<label for="avatar">Avatar</label><br>

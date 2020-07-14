@@ -1,0 +1,63 @@
+extends ../layout/common2.pug
+
+block content
+
+	.row.userPage
+		.col-12.col-md-3
+			#v-pills-tab.nav.flex-column.nav-pills
+				.user-img.d-flex.justify-content-center
+					a(href='#')
+						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+				span.text-center
+					a(href='#')
+						| Tên người dùng
+						i.fas.fa-pen.ml-2
+				.nav-opts
+					a.nav-link Cài đặt tài khoản
+				.nav-opts
+					a.nav-link Quản lý sách
+				.nav-opts
+					a.nav-link Tạo sách
+				.nav-opts
+					a.nav-link Sửa sách
+		.col-12.col-md-9
+			form(action='#', enctype='multipart/form-data')
+				h3 Thông tin sách
+				.form-row.flex-column
+					.form-group
+						label(for='bookTitle') Tên sách
+						input#Title.form-control(type='text', name='title')
+					.form-group
+						label(for='desc') Mô tả
+						input#bookDesc.form-control(type='text', name='desc')
+					.form-group
+						label(for='desc') Tác giả
+						input#bAuthor.form-control(type='text', name='author')
+					.form-group
+						label(for='price') Giá bán
+						input#bookPrice.form-control(type='number', name='price')
+					.form-group
+						label(for='amount') Số lượng
+						br
+						input#amount(type='number', name='amount')
+					.dropdown
+						label(for='category') Chọn thể loại:
+						select#cate(name='category')
+							option(value='truyện ngắn') Truyện ngắn
+							option(value='truyện dài') Truyện dài
+							option(value='tiểu thuyết') Tiểu thuyết
+							option(value='ngôn lù') Ngôn tình
+							option(value='PTKN') Phát triển kĩ năng
+							option(value='it') IT
+							option(value='ngoại ngữ') Ngoại ngữ
+					br
+					label(for='bReview') Review
+					br
+					textarea#bookReview(name='bReview', rows='4', cols='50')
+				.form-group
+					label(for='avatar') Avatar
+					br
+					input#avatarURL(type='file', name='coverURL')
+	.shopCreate.d-flex.justify-content-center.mb-4
+		button.btn.btn-primary Tạo sách
+

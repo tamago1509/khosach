@@ -4,7 +4,7 @@ block content
     .container-fluid
       .overlay
         .d-flex.justify-content-center.form-login
-          form( method="POST")
+          form(action="/users/signUp" method="POST")
             h1.text-center.sign-up.mt-3 Đăng ký
             .form-group.gr-content
               label(for='inputAddress') Họ và tên
@@ -29,7 +29,7 @@ block content
                   label.form-check-label(for='gridCheck')
                     | Remember me
                 .pr-3
-                  a.text-white(href='#') Đăng nhập?
+                  a.text-white(href='./login') Đăng nhập?
             p.text-center Kho sách_Nơi ươm mầm những giấc mơ
             br
             .footer.d-flex.justify-content-center.mb-5

@@ -1,0 +1,55 @@
+extends ../layout/common2.pug
+
+block content
+	.row.userPage
+		.col-12.col-md-3
+			#v-pills-tab.nav.flex-column.nav-pills
+				.user-img.d-flex.justify-content-center
+					a(href='#')
+						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+				span.text-center
+					a(href='#')
+						| Tên người dùng
+						i.fas.fa-pen.ml-2
+				.nav-opts
+					a.nav-link Cài đặt tài khoản
+				.nav-opts
+					a.nav-link Giỏ sách
+		.col-12.col-md-9.d-flex.justify-content-around
+			form.shopForm(action='#', enctype='multipart/form-data')
+				h3 Thông tin tài khoản
+				.form-row.flex-column
+					.form-group
+						label(for='userName') Tên người dùng
+						input#userNameInput.form-control(type='text', name='userName')
+						label(for='userEmail') Email
+						input#userNameInput.form-control(type='text', name='userEmail')
+						label(for='inputPassword4') Mật khẩu cũ
+						input#inputOldPassword.form-control(type='password', name='oldPassword')
+						label(for='inputPassword4') Mật khẩu mới
+						input#inputNewPassword4.form-control(type='password', name='newPassword')
+						label(for='avatar') Avatar
+						br
+						input#avatarURL(type='file', name='avatar')
+			form.shopForm(action='#', enctype='multipart/form-data')
+				.shopCreate.d-flex
+					a.btn.btn-primary(href='#') Tạo shop
+				.form-row.flex-column
+					.form-group
+						label(for='shopName') Tên shop
+						input#shopNameInput.form-control(type='text', name='shopName')
+						label(for='shopDesc') Mô tả
+						br
+						textarea#shopDescript(name='shopDesc', rows='4', cols='50')
+						br
+						label(for='category') Chọn thể loại:
+						select#cate(name='category')
+							option(value='truyện ngắn') Truyện ngắn
+							option(value='truyện dài') Truyện dài
+							option(value='tiểu thuyết') Tiểu thuyết
+							option(value='ngôn lù') Ngôn tình
+							option(value='PTKN') Phát triển kĩ năng
+							option(value='it') IT
+							option(value='ngoại ngữ') Ngoại ngữ
+		.shopCreate.d-flex.justify-content-center
+			button.btn.btn-primary Cập nhật

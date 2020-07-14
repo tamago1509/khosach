@@ -1,0 +1,46 @@
+extends ../layout/common2.pug
+
+block content
+	.row.userPage
+		.col-12.col-md-3
+			#v-pills-tab.nav.flex-column.nav-pills
+				.user-img.d-flex.justify-content-center
+					a(href='#')
+						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+				span.text-center
+					a(href='#')
+						| Tên người dùng
+						i.fas.fa-pen.ml-2
+				.nav-opts
+					a.nav-link Cài đặt tài khoản
+				.nav-opts
+					a.nav-link Quản lý sách
+				.nav-opts
+					a.nav-link Tạo sách
+				.nav-opts
+					a.nav-link Sửa sách
+		.col-12.col-md-8.mr-5
+			.content
+				.items
+					h2 Bảng quản lý sách
+					table.table
+						thead
+							tr
+								th(scope='col', rowspan='2') Sách đang bán
+								th.text-center(scope='col', colspan='2') Số lượng
+								th(scope='col', rowspan='2') Đơn giá
+								th(scope='col', rowspan='2') Chọn
+							tr
+								th Tồn
+								th Đã bán
+						tbody
+							tr
+								td(scope='row') The faults is on our stars
+								td 2
+								td 1
+								td 100000
+								td
+									a.btn.btn-success.mr-1(href='#') Sửa
+									a.btn.btn-danger(href='#') Xóa
+				.shopCreate.d-flex.justify-content-center.mb-4
+					button.btn.btn-primary Cập nhật

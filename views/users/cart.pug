@@ -1,0 +1,46 @@
+extends ../layout/common2.pug
+
+block content
+
+	.row.userPage
+		.col-12.col-md-3.ml-3
+			#v-pills-tab.nav.flex-column.nav-pills
+				.user-img.d-flex.justify-content-center
+					a(href='#')
+						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+				span.text-center
+					a(href='#')
+						| Tên người dùng
+						i.fas.fa-pen.ml-2
+				.nav-opts
+					a.nav-link Cài đặt tài khoản
+				.nav-opts
+					a.nav-link Giỏ sách
+		.col-12.col-md-8
+			.content
+				.items
+					h2 Giỏ hàng/Sách nổi bật
+					table.table
+						thead
+							tr
+								th(scope='col') Tên sách
+								th(scope='col') Số lượng
+								th(scope='col') Đơn giá
+								th(scope='col') Chọn
+						tbody
+							tr
+								td(scope='row') The faults is on our stars
+								td 2
+								td 100000
+								td
+									a.btn.btn-success(href='#') Mua
+									a.btn.btn-danger(href='#') Xóa
+			.price.d-flex.justify-content-between
+				.dropdown
+					a#dropdownMenuLink.btn.btn-light.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+						| Phương thức thanh toán
+					.dropdown-menu(aria-labelledby='dropdownMenuLink')
+						a.dropdown-item(href='#') COD_Thanh toán khi giao hàng
+				.mr-5
+					strong Tổng:
+				a.btn.btn-primary(href='#') Tiếp theo

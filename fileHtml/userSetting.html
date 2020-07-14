@@ -68,13 +68,15 @@
 				    	<div class="form-row flex-column">
 						    <div class="form-group">
 								<label for="userName">Tên người dùng</label>
-								<input type="text" class="form-control" id="userNameInput">
+								<input type="text" class="form-control" id="userNameInput" name="userName">
+								<label for="userEmail">Email</label>
+								<input type="text" class="form-control" id="userNameInput" name="userEmail">
 								<label for="inputPassword4">Mật khẩu cũ</label>
-								<input type="password" class="form-control" id="inputOldPassword">
+								<input type="password" class="form-control" id="inputOldPassword" name="oldPassword">
 								<label for="inputPassword4">Mật khẩu mới</label>
-								<input type="password" class="form-control" id="inputNewPassword4">
+								<input type="password" class="form-control" id="inputNewPassword4" name="newPassword">
 								<label for="avatar">Avatar</label><br>
-								<input type="file" id="avatarURL">
+								<input type="file" id="avatarURL" name = "avatar">
 						    </div>
 						</div>
 				    </form>
@@ -87,20 +89,19 @@
 				    	<div class="form-row flex-column">
 						    <div class="form-group ">
 							    <label for="shopName">Tên shop</label>
-							    <input type="text" class="form-control" id="shopNameInput">
+							    <input type="text" class="form-control" id="shopNameInput" name="shopName">
 							    <label for="shopDesc">Mô tả</label><br>
-							    <textarea id="shopDescript" name="desc" rows="4" cols="50"></textarea><br>
-							    <label for="shopType">Thể loại chính</label><br>
-							    <div class="dropdown">
-									<button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-									    Thể loại
-									</button>
-									<div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-									    <a class="dropdown-item" href="#">IT</a>
-									    <a class="dropdown-item" href="#">Truyện ngắn</a>
-									    <a class="dropdown-item" href="#">Something else here</a>
-								  	</div>
-								</div>
+							    <textarea id="shopDescript" name="shopDesc" rows="4" cols="50"></textarea><br>
+							    <label for="category">Chọn thể loại:</label>
+									<select name="category" id="cate">
+									  	<option value="truyện ngắn">Truyện ngắn</option>
+										<option value="truyện dài">Truyện dài</option>
+										<option value="tiểu thuyết">Tiểu thuyết</option>
+										<option value="ngôn lù">Ngôn tình</option>
+										<option value="PTKN">Phát triển kĩ năng</option>
+										<option value="it">IT</option>
+										<option value="ngoại ngữ">Ngoại ngữ</option>
+									</select>
 						    </div>
 						   
 						    

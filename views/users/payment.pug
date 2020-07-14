@@ -1,0 +1,45 @@
+extends ../layout/common2.pug
+
+block content
+
+	.row.userPage
+		.col-12.col-md-3
+			#v-pills-tab.nav.flex-column.nav-pills
+				.user-img.d-flex.justify-content-center
+					a(href='#')
+						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+				span.text-center
+					a(href='#')
+						| Tên người dùng
+						i.fas.fa-pen.ml-2
+				.nav-opts
+					a.nav-link Cài đặt tài khoản
+				.nav-opts
+					a.nav-link Giỏ sách
+		.col-12.col-md-8.mr-5
+			.content
+				.pane
+					.items
+						h2.text-center Thông tin thanh toán
+						.form-row.d-flex.justify-content-around.mt-5
+							.form-group
+								label(for='address') Địa chỉ mặc định
+								br
+								a.text-dark(href='#')
+									| xóm Thượng vụ 2, Thái Nguyên
+									i.fas.fa-pen.ml-2
+							.dropdown
+								button#dropdownMenuButton.btn.btn-light.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
+									| Phương thức thanh toán
+								.dropdown-menu(aria-labelledby='dropdownMenuButton')
+									a.dropdown-item(href='#') COD_Thanh toán khi nhận hàng
+									a.dropdown-item(href='#') Momo
+									a.dropdown-item(href='#') AirPay
+							.form-group
+								label(for='address') Thành tiền
+								p.display-4
+									strong 180,000
+			.shopCreate.d-flex.justify-content-center.mb-4
+				button.btn.btn-primary Xác nhận
+
+
