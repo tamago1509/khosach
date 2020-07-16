@@ -3,8 +3,11 @@ extends ../layout/common.pug
 block content
     .container-fluid
       .overlay
+        if errors
+          each error in errors
+            .alert.alert-danger= error
         .d-flex.justify-content-center.form-login
-          form(action="/users/signUp" method="POST")
+          form(action="/signup" method="POST")
             h1.text-center.sign-up.mt-3 Đăng ký
             .form-group.gr-content
               label(for='inputAddress') Họ và tên
@@ -29,7 +32,7 @@ block content
                   label.form-check-label(for='gridCheck')
                     | Remember me
                 .pr-3
-                  a.text-white(href='./login') Đăng nhập?
+                  a.text-white(href='/login') Đăng nhập?
             p.text-center Kho sách_Nơi ươm mầm những giấc mơ
             br
             .footer.d-flex.justify-content-center.mb-5

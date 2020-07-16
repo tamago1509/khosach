@@ -3,15 +3,18 @@ var User = require("../models/user.model");
 module.exports.auth = async (req, res, next)=>{
 
 
-	if(!req.signedCookies){
-		res.redirect("/auth/login")
+	if(!req.signedCookies.userId){
+		res.redirect("/login")
 		return;
-	} else{
-			let user = await User.findOne({ _id : req.signedCookies});
-			if(!user){
-				res.redirect("/auth/login");
-			}
-
 	}
-	next();
+	let user = await User.findOne({ _id : req.signedCookies.userId});
+	if(!user){
+			res.redirect("/login");
+	}else{
+
+		res.locals.user = user;
+		next();
+	}
+
+	
 }

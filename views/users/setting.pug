@@ -1,29 +1,38 @@
 extends ../layout/common2.pug
 
 block content
+
+	if errors
+		each error in errors
+			.alert.alert-danger=error
 	.row.userPage
 		.col-12.col-md-3
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
-					a(href='#')
-						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+					if user.avatar
+						a(href='/users/setting')
+							img.rounded-circle(src=user.avatar, alt='user')
+					else
+						a(href='/users/cart')
+							img.rounded-circle(src='https://picsum.photos/200/300' alt='user')
 				span.text-center
-					a(href='#')
-						| Tên người dùng
+					a(href='/users/setting')=user.userName
 						i.fas.fa-pen.ml-2
 				.nav-opts
-					a.nav-link Cài đặt tài khoản
+					a.nav-link(href="/users/setting") Cài đặt tài khoản
 				.nav-opts
-					a.nav-link Giỏ sách
-		.col-12.col-md-9.d-flex.justify-content-around
-			form.shopForm(action='#', enctype='multipart/form-data')
+					a.nav-link(href ="/users/cart") Giỏ sách
+				.nav-opts
+					a.nav-link(href="/books/bookManagement") Sang shop
+		.col-12.col-md-9.d-flex
+			form.shopForm(action='/users/setting',method="POST" enctype='multipart/form-data')
 				h3 Thông tin tài khoản
-				.form-row.flex-column
-					.form-group
+				.form-row
+					.form-group.flex-column.justify-content-around
 						label(for='userName') Tên người dùng
-						input#userNameInput.form-control(type='text', name='userName')
+						input#userNameInput.form-control(type='text', name='userName',placeholder=user.userName)
 						label(for='userEmail') Email
-						input#userNameInput.form-control(type='text', name='userEmail')
+						input#userNameInput.form-control(type='text', name='userEmail', placeholder=user.userEmail)
 						label(for='inputPassword4') Mật khẩu cũ
 						input#inputOldPassword.form-control(type='password', name='oldPassword')
 						label(for='inputPassword4') Mật khẩu mới
@@ -31,25 +40,29 @@ block content
 						label(for='avatar') Avatar
 						br
 						input#avatarURL(type='file', name='avatar')
-			form.shopForm(action='#', enctype='multipart/form-data')
-				.shopCreate.d-flex
-					a.btn.btn-primary(href='#') Tạo shop
-				.form-row.flex-column
-					.form-group
-						label(for='shopName') Tên shop
-						input#shopNameInput.form-control(type='text', name='shopName')
-						label(for='shopDesc') Mô tả
 						br
-						textarea#shopDescript(name='shopDesc', rows='4', cols='50')
-						br
-						label(for='category') Chọn thể loại:
-						select#cate(name='category')
-							option(value='truyện ngắn') Truyện ngắn
-							option(value='truyện dài') Truyện dài
-							option(value='tiểu thuyết') Tiểu thuyết
-							option(value='ngôn lù') Ngôn tình
-							option(value='PTKN') Phát triển kĩ năng
-							option(value='it') IT
-							option(value='ngoại ngữ') Ngoại ngữ
-		.shopCreate.d-flex.justify-content-center
-			button.btn.btn-primary Cập nhật
+						button.btn.btn-primary.mt-2 Cập nhật
+			.btnShop
+				.shopOpen.mr-auto
+					button.btn.btn-success#createShop Mở shop
+				form#formShop.shopForm(action='/users/postShop',method="POST")
+					.shopCreate.d-flex
+					.form-row
+						.form-group.flex-column.justify-content-around
+							label(for='shopName') Tên shop
+							input#shopNameInput.form-control(type='text', name='shopName')
+							label(for='shopDesc') Mô tả
+							br
+							textarea#shopDescript(name='shopDesc', rows='4', cols='50')
+							br
+							label(for='category') Chọn thể loại:
+							select#cate(name='category')
+								option(value='truyện ngắn') Truyện ngắn
+								option(value='truyện dài') Truyện dài
+								option(value='tiểu thuyết') Tiểu thuyết
+								option(value='ngôn lù') Ngôn tình
+								option(value='PTKN') Phát triển kĩ năng
+								option(value='it') IT
+								option(value='ngoại ngữ') Ngoại ngữ
+							button.btn.btn-primary.m-3#btnShop Tạo shop 
+	

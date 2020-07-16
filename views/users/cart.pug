@@ -6,16 +6,17 @@ block content
 		.col-12.col-md-3.ml-3
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
-					a(href='#')
+					a(href='/users/cart')
 						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
 				span.text-center
-					a(href='#')
-						| Tên người dùng
+					a(href='/users/setting')=user.userName
 						i.fas.fa-pen.ml-2
 				.nav-opts
-					a.nav-link Cài đặt tài khoản
+					a.nav-link(href="/users/setting") Cài đặt tài khoản
 				.nav-opts
-					a.nav-link Giỏ sách
+					a.nav-link(href="/users/cart") Giỏ sách
+				.nav-opts
+					a.nav-link(href="/books/bookManagement") Sang shop
 		.col-12.col-md-8
 			.content
 				.items
@@ -43,4 +44,4 @@ block content
 						a.dropdown-item(href='#') COD_Thanh toán khi giao hàng
 				.mr-5
 					strong Tổng:
-				a.btn.btn-primary(href='#') Tiếp theo
+				a.btn.btn-primary(href='/users/payment') Tiếp theo

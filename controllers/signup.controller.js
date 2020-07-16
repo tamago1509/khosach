@@ -3,26 +3,18 @@ var User = require("../models/user.model");
 
 
 module.exports.getSignUp = (req, res)=>{
-	res.render("users/signUp")
+	res.render("auth/signUp")
 }
 
 module.exports.postSignUp = (req, res)=>{
-	bcrypt.hash(req.body.userPassword, saltRounds, function(err, hash) {
-		var user = new User({
-			userName: req.body.userName,
-			userEmail: req.body.userEmail,
-			userPassword: hash,
-			userPhone: req.body.userPhone,
-			userAddress: req.body.userAddress
-
-			});
-		user.save().then((err, result)=>{
+	var user = res.locals.user;
+	user.save().then((err, result)=>{
 			if(err){
 				console.log(err);
+				res.sendStatus(500)
 			} 
+			res.redirect("/login")
 		})
-	    
-	});
-	res.redirect("/users/login")
-	return;
+	
+	
 }

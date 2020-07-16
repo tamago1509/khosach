@@ -1,4 +1,5 @@
 var mongoose = require("mongoose");
+
 var Schema = mongoose.Schema;
 
 var bookSchema = new mongoose.Schema({
@@ -9,7 +10,8 @@ var bookSchema = new mongoose.Schema({
 	amount: Number,
 	category: String,
 	bReview: String,
-	coverURL: String,
+	cover: String,
+	shopId: {type: mongoose.Types.ObjectId}
 
 })
 

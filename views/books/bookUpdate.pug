@@ -6,20 +6,20 @@ block content
 		.col-12.col-md-3
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
-					a(href='#')
+					a(href='/users/cart')
 						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
 				span.text-center
-					a(href='#')
+					a(href='/users/setting')
 						| Tên người dùng
 						i.fas.fa-pen.ml-2
 				.nav-opts
-					a.nav-link Cài đặt tài khoản
+					a.nav-link(href="/users/setting") Cài đặt tài khoản
 				.nav-opts
-					a.nav-link Quản lý sách
+					a.nav-link(href="/books/bookManagement") Quản lý sách
 				.nav-opts
-					a.nav-link Tạo sách
+					a.nav-link(href="/books/bookSetting") Tạo sách
 				.nav-opts
-					a.nav-link Sửa sách
+					a.nav-link(href="/books/bookUpdate") Sửa sách
 		.col-12.col-md-9
 			form(action='#', enctype='multipart/form-data')
 				h3 Thông tin sách
