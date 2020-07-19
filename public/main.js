@@ -58,27 +58,29 @@ $(document).ready(function() {
 
 		   			result +=`
 	   				
+	   				<div class="col-12 col-sm-6 col-md-3">
 		   				<div class="card mt-5 mr-4">
-		   					<a href="/books/bookDetail/"+${value._id}>
+		   					<a href="/books/bookDetail/${value._id}">
 						  		<img class= "card-img-top" src=${value.cover} style="height: 250px;">
 		   					</a>
 					  		<div class="card-body">
 							    <h5 class="card-title text-center">${value.title}</h5>
 							    <p class="card-text text-center"><strong>Giá : ${change(value.price)}</strong></p>
 							    <div class="group-btn d-flex justify-content-around">
-								    <a class="btn btn-primary mr-1" href="(href='/books/bookDetail/'+ ${value._id}) ">Chi tiết</a>
+								    <a class="btn btn-primary mr-1" href="/books/bookDetail/${value._id}">Chi tiết</a>
 								    <button class="btn btn-success mr-1" data-id =${value._id} id="buy_${value._id}">Mua</button>
 								    <button class="btn btn-warning " data-id =${value._id} id="show_${value._id}">Xem</button>
 							    </div>
 					  		</div>
 
 						</div>
+					</div>
 					`
 
 		   	}
 		   })
 
-		   $(".showCard").html(result);
+		   $(".showCard").empty().append(result);
 	  })
 
 

@@ -49,18 +49,21 @@
 		<div class="bookClass text-center ">Sách bán chạy</div>
 		<div class="collection d-flex justify-content-around ml-5">
 			<div class="row">
-				<div class="col-1 col-md-3">
+				<div class="col-12 col-sm-6 col-md-3">
 					<div class="card mt-5 mr-4">
-				  	<img src="https://picsum.photos/200/200" class="card-img-top" alt="...">
+						<a href="/books/bookDetail/" +book._id>
+				  			<img src=book.cover class="card-img-top" alt="...">
+						</a>
 			  		<div class="card-body">
-					    <h5 class="card-title text-center">Tên sách</h5>
-					    <p class="card-text text-center"><strong>Giá : 100,000</strong></p>
+					    <h5 class="card-title text-center">book.title</h5>
+					    <p class="card-text text-center"><strong>Giá : #{func(book.price)}</strong></p>
 					    <div class="group-btn d-flex justify-content-around">
-						    <a href="#" class="btn btn-primary m-1">Chi tiết</a>
-						    <a href="#" class="btn btn-success m-1">Mua</a>
-						    <a href="#" class="btn btn-warning m-1">Xem</a>
+						    <a href=`/books/bookDetail/"+${book._id}` class="btn btn-primary mr-1">Chi tiết</a>
+						    <button class="btn btn-success mr-1">Mua</button>
+						    <button class="btn btn-warning ">Xem</button>
 					    </div>
 				  	</div>
+				  	<div class="card-footer" id ="card-footer_"></div>
 					</div>
 				</div>
 				<div class="col-1 col-md-3">
