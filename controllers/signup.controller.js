@@ -6,14 +6,19 @@ module.exports.getSignUp = (req, res)=>{
 	res.render("auth/signUp")
 }
 
-module.exports.postSignUp = (req, res)=>{
+module.exports.postSignUp = async (req, res)=>{
+
 	var user = res.locals.user;
-	user.save().then((err, result)=>{
-			if(err){
-				console.log(err);
-				res.sendStatus(500)
+	
+	await user.save().then(result=>{
+			if(result){
+				
+				res.redirect("/login")
 			} 
-			res.redirect("/login")
+				
+		}).catch(err=>{
+			console.log(err);
+			res.redirect("/signup")
 		})
 	
 	
