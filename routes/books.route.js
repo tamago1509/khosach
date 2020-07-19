@@ -12,12 +12,12 @@ const upload = multer({ storage: storage })
 
 router.get("/index", controller.getIndex);
 router.get("/bookManagement", controller.getBookManagement);
-router.get("/bookSetting", controller.getBookSetting);
-router.get("/bookUpdate", controller.getBookUpdate);
-router.get("/bookDetail", controller.getBookDetail);
+router.get("/bookSetting/:id", controller.getBookSetting);
+router.get("/bookUpdate/:id", controller.getBookUpdate);
+router.get("/bookDetail/:id", controller.getBookDetail);
+router.get("/delete/:id", controller.delete);
 
 
-// router.post("/home", controller.postHome);
 // router.post("/bookManagement", controller.postBookManagement);
 router.post("/bookSetting",upload.single('cover'), controller.postBookSetting);
 // router.post("/bookUpdate", controller.postBookUpdate);

@@ -50,3 +50,18 @@ form{
 	transform: scale(1.1);
 
 }
+.card > a > img {
+	height: 250px;
+}
+
+h5.card-title{
+	overflow: hidden; 
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	width: 100%;
+	
+}
+h4.content{
+	text-decoration: underline;
+	color: #00f;
+}

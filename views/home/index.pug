@@ -1,102 +1,48 @@
 extends ../layout/common2.pug
 
 block content
+	
+	
+		.bookClass.text-center Sách bán chạy
+		.collection.d-flex.justify-content-around.ml-5
+			.row.mb-5.showCard
+				each book in books
+					.col-12.col-sm-6.col-md-3
+						.card.mt-5.mr-4
+							a(href="/books/bookDetail/" +book._id)
+								img.card-img-top(src=book.cover)
+							.card-body
+								h5#title.card-title.text-center=book.title
+								p.card-text.text-center
+									strong Giá : #{func(book.price)}
+								.group-btn.d-flex.flex-wrap
+									a.btn.btn-primary.mr-1(href='/books/bookDetail/'+ book._id) Chi tiết
+									button.btn.btn-success.mr-1(data-id =`${book._id}` id=`buy_${book._id}`) Mua
+									button.btn.btn-warning.mr-0(data-id=`${book._id}` id=`show_${book._id}`) Xem
+							.card-footer(id=`card-footer_${book._id}`)
 
-	.bookClass.text-center Sách bán chạy
-	.collection.d-flex.justify-content-around.ml-5
-		.row
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-	.bookClass.text-center Gợi ý cho bạn
-	.collection.d-flex.justify-content-around.ml-5
-		.row
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
-			.col-12.col-sm-6.col-md-3
-				.card.mt-5.mr-4
-					img.card-img-top(src='https://picsum.photos/200/200', alt='...')
-					.card-body
-						h5.card-title.text-center Tên sách
-						p.card-text.text-center
-							strong Giá : 100,000
-						.group-btn.d-flex.flex-wrap
-							a.btn.btn-primary.mr-1(href='#') Chi tiết
-							a.btn.btn-success.mr-1(href='#') Mua
-							a.btn.btn-warning.mr-0(href='#') Xem
 
+		.bookClass.text-center Gợi ý cho bạn
+		.collection.d-flex.justify-content-around.ml-5
+			.row.mb-5
+				each book in books
+					.col-12.col-sm-6.col-md-3
+						.card.mt-5.mr-4
+							a(href="/books/bookDetail/" +book._id)
+								img.card-img-top(src=book.cover)
+							.card-body
+								h5.card-title.text-center=book.title
+								p.card-text.text-center
+									strong Giá : #{func(book.price)}
+								.group-btn.d-flex.flex-wrap
+									a.btn.btn-primary.mr-1(href='/books/bookDetail/'+ book._id) Chi tiết
+									button.btn.btn-success.mr-1 Mua
+									button.btn.btn-warning.mr-0(data-id=`${book._id}` id=`show_${book._id}`) Xem
+							.card-footer(id=`card-footer_${book._id}`)
+									
+				
+		
+			
 			
 
 	

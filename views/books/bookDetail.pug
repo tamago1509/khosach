@@ -1,35 +1,27 @@
 extends ../layout/common2.pug
 
 block content
+
 	.row.mt-5.ml-4
 		.col-12.col-md-4.bookCoverImg
-			img(src='https://cdn.collider.com/wp-content/uploads/2011/09/the-bfg-book-cover.jpg', alt='bookCover')
+			img(src=book.cover  alt='bookCover')
 		.col-12.col-md-8.bookInfo
-			h2.text-primary The fault is on your stars
+			h2.text-primary.display-4=book.title
 			h3
 				i
-					| Anthony Gorge
-					i
-			i
-				i
-					h3
-						strong Giá: 100,000
-					h4 Review:
-					p
-						em
-							span
-								| Lorem ipsum dolor sit amet, consectetur adipisicing elit. Id, libero. Id quos repellendus explicabo rerum illo excepturi molestias! Optio assumenda modi tempora impedit aperiam in eligendi maiores ab maxime quidem.
-							span
-								| Consequuntur unde ratione consequatur quae perspiciatis, corrupti eligendi adipisci numquam, amet magnam aperiam! Odit suscipit officia assumenda accusamus earum maxime aut blanditiis quas! Porro, similique ipsa, deleniti doloribus fuga dicta!
-					p
-						em
-							span
-								| Iure quam adipisci earum nesciunt vel nihil nobis, at saepe, optio dolorum, aspernatur id vero incidunt eos animi quos ut esse. Reiciendis, enim modi nihil? Beatae repellendus quaerat blanditiis enim.
+					|#{book.author}
+
+			h3
+				strong Giá: #{book.price}
+			h4.content Nội dung:
+			p #{book.desc}
+			
+			h4.content Review:		 							
+			p
+				em.text-warning #{book.bReview}
+							
 					.gr-btn.d-flex.justify-content-end.mr-5
 						button.btn.btn-success.mr-3 Mua
 						a.btn.btn-primary(href="/books/index") Về trang chủ
 							i.fas.fa-arrow-right.ml-2
-		i
-			i
-	i
-		i
+	

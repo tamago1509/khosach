@@ -3,7 +3,8 @@ var methodOverride = require('method-override');
 var express = require("express");
 var app = express();
 var port = 4000;
-var cookieParser = require('cookie-parser')
+var cookieParser = require('cookie-parser');
+
 
 
 
@@ -25,6 +26,8 @@ var userRoute = require("./routes/users.route");
 var bookRoute = require("./routes/books.route");
 var loginRoute = require("./routes/login.route");
 var signupRoute = require("./routes/signup.route");
+var apiRoute = require("./routes/api.route");
+
 
 //require middleware
 var authMiddleware = require("./middleware/auth.middleware");
@@ -63,6 +66,8 @@ app.use("/users",authMiddleware.auth, userRoute);
 app.use("/books", authMiddleware.auth, bookRoute);
 app.use("/login", loginRoute)
 app.use("/signup", signupRoute);
+app.use("/api", authMiddleware.auth, apiRoute);
+
 
 
 app.get("/",(req, res)=>{

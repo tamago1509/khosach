@@ -6,8 +6,12 @@ block content
 		.col-12.col-md-3
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
-					a(href='/users/cart')
-						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+					if user.avatar
+						a(href='/users/setting')
+							img.rounded-circle(src=user.avatar, alt='user')
+					else
+						a(href='/users/cart')
+							img.rounded-circle(src='https://picsum.photos/200/300' alt='user')
 				span.text-center
 					a(href='/users/setting')=user.userName
 						i.fas.fa-pen.ml-2
@@ -26,8 +30,7 @@ block content
 							.form-group
 								label(for='address') Địa chỉ mặc định
 								br
-								a.text-dark(href='#')
-									| xóm Thượng vụ 2, Thái Nguyên
+								a.text-dark(href='/users/setting')=user.userAddress 
 									i.fas.fa-pen.ml-2
 							.dropdown
 								button#dropdownMenuButton.btn.btn-light.dropdown-toggle(type='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -39,7 +42,7 @@ block content
 							.form-group
 								label(for='address') Thành tiền
 								p.display-4
-									strong 180,000
+									strong #{func(sum)}
 			.shopCreate.d-flex.justify-content-center.mb-4
 				button.btn.btn-primary Xác nhận
 

@@ -2,6 +2,7 @@
 var mongoose = require("mongoose");
 var User = require("../models/user.model");
 var Shop = require("../models/shop.model");
+var Transaction = require("../models/transaction.model");
 
 //config cloudinary
 
@@ -41,9 +42,26 @@ const saltRounds = 10;
 
 
 module.exports.getCart = async (req, res)=>{
+
+	function change(price){
+		let changePrice = price.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+		return changePrice
+	}
 	var user = await User.findOne({ _id : req.signedCookies.userId})
+	var trans = await Transaction.find({ userId : req.signedCookies.userId})
+	var sum = 0;
+	for(let i= 0; i < trans.length; i++){
+		sum += (trans[i].price*trans[i].cart)
+	}
+	
 		res.render("users/cart",{
-			user: user
+			user: user,
+			trans: trans,
+			sum: sum,
+			func: change
+
+	
+
 	})
 	
 }
@@ -58,9 +76,20 @@ module.exports.getSetting = async (req, res)=>{
 
 
 module.exports.getPayment = async (req, res)=>{
+	function change(price){
+		let changePrice = price.toLocaleString('vi', {style : 'currency', currency : 'VND'});
+		return changePrice
+	}
 	var user = await User.findOne({ _id : req.signedCookies.userId})
+	var trans = await Transaction.find({ userId : req.signedCookies.userId})
+	var sum = 0;
+	for(let i= 0; i < trans.length; i++){
+		sum += (trans[i].price*trans[i].cart)
+	}
 		res.render("users/payment",{
-			user: user
+			user: user,
+			sum : sum,
+			func: change
 	})
 }
 
@@ -135,7 +164,8 @@ module.exports.postSetting = async (req, res)=>{
 
 		
 	let updateContent = {userName: req.body.userName||user.userName, 
-		userEmail: req.body.userEmail||user.userEmail}
+		userEmail: req.body.userEmail||user.userEmail,
+		userAddress: req.body.userAddress|| user.userAddress}
 	console.log(req.body)
 
 	User.findOneAndUpdate({_id: user._id} , updateContent,{ new: true })
@@ -178,4 +208,17 @@ module.exports.postShop = async function(req, res){
 			})
 		})
 	}				
+}
+
+module.exports.delete = (req, res)=>{
+	var bookId = req.params.id;
+	console.log(bookId);
+	Transaction.deleteOne({ bookId: req.params.id}).then(result=>{
+		console.log("Đã xóa yêu cầu");
+		res.redirect("/users/cart")
+
+	}).catch(e=>{
+		console.log(e)
+		res.redirect("/users/cart")
+	})
 }

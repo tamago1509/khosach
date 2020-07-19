@@ -6,8 +6,12 @@ block content
 		.col-12.col-md-3.ml-3
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
-					a(href='/users/cart')
-						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+					if user.avatar
+						a(href='/users/setting')
+							img.rounded-circle(src=user.avatar, alt='user')
+					else
+						a(href='/users/cart')
+							img.rounded-circle(src='https://picsum.photos/200/300' alt='user')
 				span.text-center
 					a(href='/users/setting')=user.userName
 						i.fas.fa-pen.ml-2
@@ -21,21 +25,23 @@ block content
 			.content
 				.items
 					h2 Giỏ hàng/Sách nổi bật
-					table.table
-						thead
-							tr
-								th(scope='col') Tên sách
-								th(scope='col') Số lượng
-								th(scope='col') Đơn giá
-								th(scope='col') Chọn
-						tbody
-							tr
-								td(scope='row') The faults is on our stars
-								td 2
-								td 100000
-								td
-									a.btn.btn-success(href='#') Mua
-									a.btn.btn-danger(href='#') Xóa
+							table.table
+										thead
+											tr
+												th(scope='col') Tên sách
+												th(scope='col') Số lượng
+												th(scope='col') Đơn giá
+												th(scope='col') Chọn
+										tbody
+											if trans
+												each tran in trans
+													tr
+														td(scope='row')=tran.bookTitle
+														td=tran.cart
+														td=func(tran.price)
+														td
+															a.btn.btn-success(href='#') Mua
+															a.btn.btn-danger(href='/users/delete/'+ tran.bookId) Xóa
 			.price.d-flex.justify-content-between
 				.dropdown
 					a#dropdownMenuLink.btn.btn-light.dropdown-toggle(href='#', role='button', data-toggle='dropdown', aria-haspopup='true', aria-expanded='false')
@@ -43,5 +49,5 @@ block content
 					.dropdown-menu(aria-labelledby='dropdownMenuLink')
 						a.dropdown-item(href='#') COD_Thanh toán khi giao hàng
 				.mr-5
-					strong Tổng:
+					strong Tổng: #{func(sum)}
 				a.btn.btn-primary(href='/users/payment') Tiếp theo

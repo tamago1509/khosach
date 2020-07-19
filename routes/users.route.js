@@ -15,8 +15,8 @@ router.get("/payment", controller.getPayment);
 
 router.post("/setting", upload.single('avatar'), controller.postSetting);
 router.post("/postShop", controller.postShop);
-// router.post("/userPage", controller.postCart);
-// router.post("/payment", controller.postPayment);
+router.get("/delete/:id", controller.delete);
+
 
 
 module.exports = router;

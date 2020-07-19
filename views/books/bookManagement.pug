@@ -6,10 +6,12 @@ block content
 			#v-pills-tab.nav.flex-column.nav-pills
 				.user-img.d-flex.justify-content-center
 					a(href='/users/cart')
-						img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
+						if user.avatar
+							img.rounded-circle(src=user.avatar, alt='user')
+						else
+							img.rounded-circle(src='https://picsum.photos/200/300', alt='user')
 				span.text-center
-					a(href='/users/setting')
-						| Tên người dùng
+					a(href='/users/setting')=user.userName
 						i.fas.fa-pen.ml-2
 				.nav-opts
 					a.nav-link(href="/users/setting") Cài đặt tài khoản
@@ -34,13 +36,15 @@ block content
 								th Tồn
 								th Đã bán
 						tbody
-							tr
-								td(scope='row') The faults is on our stars
-								td 2
-								td 1
-								td 100000
-								td
-									a.btn.btn-success.mr-1(href='#') Sửa
-									a.btn.btn-danger(href='#') Xóa
+							if books
+								each book in books
+									tr
+										td(scope='row')=book.title
+										td 2
+										td 1
+										td=book.price
+										td
+											a.btn.btn-success.mr-1(href='/books/bookSetting/'+book._id) Sửa
+											a.btn.btn-danger(href='/books/delete/' + book._id) Xóa
 				.shopCreate.d-flex.justify-content-center.mb-4
 					button.btn.btn-primary Cập nhật
